@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.165fc3c8.css",
-    "main.js": "/static/js/main.1758b696.js",
-    "static/js/453.fd2f0c4a.chunk.js": "/static/js/453.fd2f0c4a.chunk.js",
-    "index.html": "/index.html",
-    "main.165fc3c8.css.map": "/static/css/main.165fc3c8.css.map",
-    "main.1758b696.js.map": "/static/js/main.1758b696.js.map",
-    "453.fd2f0c4a.chunk.js.map": "/static/js/453.fd2f0c4a.chunk.js.map"
+    "main.css": "/ai-teachable-heeseop/static/css/main.165fc3c8.css",
+    "main.js": "/ai-teachable-heeseop/static/js/main.921de584.js",
+    "static/js/453.fd2f0c4a.chunk.js": "/ai-teachable-heeseop/static/js/453.fd2f0c4a.chunk.js",
+    "index.html": "/ai-teachable-heeseop/index.html",
+    "main.165fc3c8.css.map": "/ai-teachable-heeseop/static/css/main.165fc3c8.css.map",
+    "main.921de584.js.map": "/ai-teachable-heeseop/static/js/main.921de584.js.map",
+    "453.fd2f0c4a.chunk.js.map": "/ai-teachable-heeseop/static/js/453.fd2f0c4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.165fc3c8.css",
-    "static/js/main.1758b696.js"
+    "static/js/main.921de584.js"
   ]
 }
