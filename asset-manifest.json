@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ai-teachable-heeseop/static/css/main.eadb36f2.css",
+    "main.js": "/ai-teachable-heeseop/static/js/main.37ad5058.js",
+    "static/js/453.fd2f0c4a.chunk.js": "/ai-teachable-heeseop/static/js/453.fd2f0c4a.chunk.js",
+    "index.html": "/ai-teachable-heeseop/index.html",
+    "main.eadb36f2.css.map": "/ai-teachable-heeseop/static/css/main.eadb36f2.css.map",
+    "main.37ad5058.js.map": "/ai-teachable-heeseop/static/js/main.37ad5058.js.map",
+    "453.fd2f0c4a.chunk.js.map": "/ai-teachable-heeseop/static/js/453.fd2f0c4a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eadb36f2.css",
+    "static/js/main.37ad5058.js"
+  ]
+}
