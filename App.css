@@ -1,0 +1,541 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, #304a75 0%, #121827 45%, #070912 100%);
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 시작 화면 */
+
+.start-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 35%),
+    linear-gradient(135deg, #111827, #1e293b, #020617);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.title-box {
+  width: 700px;
+  max-width: 96%;
+  max-height: calc(100vh - 20px);
+  padding: 20px 28px;
+  text-align: center;
+  border-radius: 26px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.title-box h1 {
+  margin: 0;
+  font-size: 38px;
+  color: #facc15;
+  text-shadow:
+    0 0 10px #facc15,
+    0 0 25px rgba(250, 204, 21, 0.5);
+}
+
+.title-box p {
+  margin: 6px 0;
+  color: #dbeafe;
+  font-size: 15px;
+}
+
+.rule-box {
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 2px dashed rgba(125, 211, 252, 0.5);
+}
+
+.rule-box p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 포즈 설명 이미지 */
+
+.guide-box {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(2, 6, 23, 0.35);
+  border: 2px solid rgba(125, 211, 252, 0.22);
+}
+
+.guide-box h3 {
+  margin: 0 0 8px;
+  color: #7dd3fc;
+  font-size: 19px;
+}
+
+.pose-guide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.pose-item {
+  width: 100%;
+  max-width: 260px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 2px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.pose-item img {
+  width: 100%;
+  max-width: 205px;
+  height: 95px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 5px;
+  border-radius: 12px;
+  border: 3px solid rgba(125, 211, 252, 0.25);
+}
+
+.pose-item p {
+  margin: 3px 0 1px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+.pose-item span {
+  display: block;
+  color: #dbeafe;
+  font-size: 13px;
+}
+
+.start-btn {
+  cursor: pointer;
+  border: none;
+  padding: 11px 28px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #111827;
+  background: linear-gradient(135deg, #facc15, #fb923c);
+  box-shadow:
+    0 6px 0 #b45309,
+    0 0 25px rgba(251, 146, 60, 0.5);
+  transition: 0.15s;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 9px 0 #b45309,
+    0 0 35px rgba(251, 146, 60, 0.8);
+}
+
+.start-btn:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #b45309,
+    0 0 20px rgba(251, 146, 60, 0.6);
+}
+
+/* 게임 화면 */
+
+.game-screen {
+  height: 100vh;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.top-ui {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 14px 20px;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+.heart-box {
+  display: flex;
+  gap: 10px;
+}
+
+.heart {
+  font-size: 32px;
+  text-shadow: 0 0 15px rgba(248, 113, 113, 0.7);
+}
+
+.heart.on {
+  color: #ef4444;
+}
+
+.heart.off {
+  color: #334155;
+  text-shadow: none;
+}
+
+.stat-box {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stat-box span {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 메인 레이아웃 */
+
+.main-layout {
+  height: calc(100vh - 104px);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.camera-panel,
+.dungeon-panel {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 2px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.camera-panel h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #7dd3fc;
+}
+
+#canvas {
+  width: 240px;
+  height: 240px;
+  border-radius: 22px;
+  background: #020617;
+  border: 4px solid rgba(125, 211, 252, 0.4);
+  box-shadow: 0 0 18px rgba(125, 211, 252, 0.25);
+}
+
+.pose-info {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.pose-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.hold-bar {
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hold-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #facc15);
+  transition: width 0.1s linear;
+}
+
+.prediction-list {
+  margin-top: 10px;
+  padding: 10px;
+  max-height: 105px;
+  overflow-y: auto;
+  font-size: 13px;
+  border-radius: 16px;
+  color: #cbd5e1;
+  background: rgba(2, 6, 23, 0.5);
+}
+
+/* 던전 */
+
+.dungeon-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-card {
+  width: min(100%, 500px);
+  min-height: 220px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 55%),
+    linear-gradient(135deg, #1e293b, #020617);
+  border: 4px solid rgba(250, 204, 21, 0.45);
+  box-shadow:
+    0 0 35px rgba(250, 204, 21, 0.18),
+    inset 0 0 25px rgba(255, 255, 255, 0.04);
+  transition: 0.2s;
+}
+
+.room-card:hover {
+  transform: scale(1.03);
+  border-color: #facc15;
+  box-shadow:
+    0 0 45px rgba(250, 204, 21, 0.35),
+    inset 0 0 25px rgba(255, 255, 255, 0.06);
+}
+
+.room-icon {
+  font-size: 68px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.25));
+}
+
+.room-card h2 {
+  margin: 6px 0;
+  font-size: 28px;
+  color: #fde68a;
+}
+
+.room-card p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.message-box {
+  width: min(100%, 500px);
+  margin: 12px 0;
+  padding: 12px 18px;
+  text-align: center;
+  border-radius: 20px;
+  background: rgba(30, 41, 59, 0.92);
+  border: 2px solid rgba(125, 211, 252, 0.3);
+  color: #e0f2fe;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 미니맵 - 5x5 유지, 칸 사이즈만 크게 */
+
+.mini-map {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(2, 6, 23, 0.7);
+  border: 2px solid rgba(148, 163, 184, 0.2);
+}
+
+.map-row {
+  display: flex;
+}
+
+.map-cell {
+  width: 58px;
+  height: 58px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #1e293b;
+  color: #64748b;
+  font-size: 26px;
+}
+
+.player-cell {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.9);
+}
+
+/* 클리어 / 오버 */
+
+.end-screen {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.end-screen h1 {
+  margin: 0;
+  font-size: 70px;
+}
+
+.end-screen p {
+  font-size: 24px;
+  color: #e2e8f0;
+}
+
+.end-screen.clear {
+  background:
+    radial-gradient(circle, rgba(34, 197, 94, 0.25), transparent 35%),
+    linear-gradient(135deg, #052e16, #020617);
+}
+
+.end-screen.clear h1 {
+  color: #86efac;
+  text-shadow: 0 0 25px rgba(134, 239, 172, 0.8);
+}
+
+.end-screen.over {
+  background:
+    radial-gradient(circle, rgba(239, 68, 68, 0.25), transparent 35%),
+    linear-gradient(135deg, #450a0a, #020617);
+}
+
+.end-screen.over h1 {
+  color: #fca5a5;
+  text-shadow: 0 0 25px rgba(248, 113, 113, 0.8);
+}
+
+.hidden-canvas-box {
+  display: none;
+}
+
+/* 반응형 */
+
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-ui {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .title-box {
+    width: 92%;
+  }
+
+  .title-box h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-height: 760px) {
+  .title-box {
+    padding: 16px 24px;
+  }
+
+  .title-box h1 {
+    font-size: 34px;
+  }
+
+  .title-box p {
+    font-size: 14px;
+  }
+
+  .rule-box {
+    margin: 8px 0;
+    padding: 8px;
+  }
+
+  .guide-box {
+    margin: 8px 0;
+    padding: 8px;
+  }
+
+  .pose-item img {
+    height: 80px;
+  }
+
+  .pose-item p {
+    font-size: 15px;
+  }
+
+  .pose-item span {
+    font-size: 12px;
+  }
+
+  .start-btn {
+    padding: 9px 24px;
+    font-size: 16px;
+  }
+
+  .room-card {
+    min-height: 190px;
+  }
+
+  .room-icon {
+    font-size: 58px;
+  }
+
+  .map-cell {
+    width: 52px;
+    height: 52px;
+    margin: 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pose-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .pose-item {
+    max-width: 300px;
+  }
+
+  .map-cell {
+    width: 44px;
+    height: 44px;
+    margin: 3px;
+    font-size: 22px;
+  }
+}
